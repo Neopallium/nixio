@@ -1,4 +1,11 @@
+NIXIO
+=====
+
+This Git repository is a fork of the [NIXIO code from the LuCI project](http://luci.subsignal.org/).  I created this fork to make it easier to track my changes & fixes.
+
 Building:
+---------
+
 	Use GNU Make.
 	make or gmake depending on your system.
 	
@@ -11,3 +18,4 @@ Building:
 	LUA_TARGET	Lua compile		target	[*source|strip|compile]
 	LUA_MODULEDIR	Install LUA_PATH	"/usr/share/lua/5.1"
 	LUA_LIBRARYDIR	Install LUA_CPATH	"/usr/lib/lua/5.1"
+

@@ -1,4 +1,7 @@
+dist
 src/libaxtls.a
+*.o
+*.so
 .depend
 .config.*
 _stage
