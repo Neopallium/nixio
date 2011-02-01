@@ -14,7 +14,7 @@ NIXIO_SO      = nixio.so
 NIXIO_LDFLAGS =
 
 ifeq (,$(findstring Darwin,$(OS)))
-	NIXIO_LDFLAGS += -lcrypto
+	NIXIO_LDFLAGS += -lcrypt
 else
 	EXTRA_CFLAGS += -D__DARWIN__
 endif
