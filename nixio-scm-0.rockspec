@@ -29,7 +29,7 @@ external_dependencies = {
 build = {
    type = "make",
    build_variables = {
-      NIXIO_LDFLAGS = "-lcrypt -L$(OPENSSL_LIBDIR) -I$(OPENSSL_INCDIR)",
+      NIXIO_LDFLAGS = "-lcrypto -L$(OPENSSL_LIBDIR) -I$(OPENSSL_INCDIR)",
       LUA_CFLAGS = "$(CFLAGS) -I$(LUA_INCDIR)",
    },
    install_variables = {
