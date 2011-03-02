@@ -16,7 +16,7 @@ description = {
    ]],
    homepage = "http://luci.subsignal.org",
    license = "Apache 2.0",
-   maintainer = "Steven Barth",
+   maintainer = "Robert G. Jakabosky <bobby@sharedrealm.com>",
 }
 dependencies = {
    "lua >= 5.1"
