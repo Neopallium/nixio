@@ -25,6 +25,14 @@
 #include <sys/types.h>
 #include <signal.h>
 
+//for gettime()
+#ifdef _WIN32
+#include <windows.h>
+#else
+#include <time.h>
+#include <sys/time.h>
+#endif
+
 #define NIXIO_EXECVE	0x01
 #define NIXIO_EXECV		0x02
 #define NIXIO_EXECVP	0x03
@@ -410,6 +418,31 @@ static int nixio_sysinfo(lua_State *L) {
 
 #endif
 
+#ifdef _WIN32
+double gettime(void) {
+    FILETIME ft;
+    double t;
+    GetSystemTimeAsFileTime(&ft);
+    /* Windows file time (time since January 1, 1601 (UTC)) */
+    t  = ft.dwLowDateTime/1.0e7 + ft.dwHighDateTime*(4294967296.0/1.0e7);
+    /* convert to Unix Epoch time (time since January 1, 1970 (UTC)) */
+    return (t - 11644473600.0);
+}
+#else
+double gettime(void) {
+    struct timeval v;
+    gettimeofday(&v, (struct timezone *) NULL);
+    /* Unix Epoch time (time since January 1, 1970 (UTC)) */
+    return v.tv_sec + v.tv_usec/1.0e6;
+}
+#endif
+
+static int nixio_gettime(lua_State *L)
+{
+    lua_pushnumber(L, gettime());
+    return 1;
+}
+
 
 /* module table */
 static const luaL_reg R[] = {
@@ -431,6 +464,7 @@ static const luaL_reg R[] = {
 	{"times",		nixio_times},
 	{"uname",		nixio_uname},
 #endif
+	{"gettime",		nixio_gettime},
 	{"chdir",		nixio_chdir},
 	{"signal",		nixio_signal},
 	{"getpid",		nixio_getpid},
