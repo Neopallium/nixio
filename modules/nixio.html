@@ -1,19 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
 <head>
-    <title>Reference</title>
+    <title>nixio: Module Index</title>
     <link rel="stylesheet" href="../luadoc.css" type="text/css" />
-	<!--meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/-->
+    <!--meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/-->
 </head>
 
 <body>
 <div id="container">
 
 <div id="product">
-	<div id="product_logo"></div>
-	<div id="product_name"><big><b></b></big></div>
-	<div id="product_description"></div>
+    <div id="product_logo"></div>
+    <div id="product_name"><big><b></b></big></div>
+    <div id="product_description"></div>
 </div> <!-- id="product" -->
 
 <div id="main">
@@ -90,6 +91,67 @@
 
 <!-- File list -->
 
+<h1>Files</h1>
+<ul>
+
+	<li>
+		<a href="../files/CHANGELOG.html">CHANGELOG.lua</a>
+	</li>
+
+	<li>
+		<a href="../files/README.html">README.lua</a>
+	</li>
+
+	<li>
+		<a href="../files/nixio.CryptoHash.html">nixio.CryptoHash.lua</a>
+	</li>
+
+	<li>
+		<a href="../files/nixio.File.html">nixio.File.lua</a>
+	</li>
+
+	<li>
+		<a href="../files/nixio.Socket.html">nixio.Socket.lua</a>
+	</li>
+
+	<li>
+		<a href="../files/nixio.TLSContext.html">nixio.TLSContext.lua</a>
+	</li>
+
+	<li>
+		<a href="../files/nixio.TLSSocket.html">nixio.TLSSocket.lua</a>
+	</li>
+
+	<li>
+		<a href="../files/nixio.UnifiedIO.html">nixio.UnifiedIO.lua</a>
+	</li>
+
+	<li>
+		<a href="../files/nixio.bin.html">nixio.bin.lua</a>
+	</li>
+
+	<li>
+		<a href="../files/nixio.bit.html">nixio.bit.lua</a>
+	</li>
+
+	<li>
+		<a href="../files/nixio.crypto.html">nixio.crypto.lua</a>
+	</li>
+
+	<li>
+		<a href="../files/nixio.fs.html">nixio.fs.lua</a>
+	</li>
+
+	<li>
+		<a href="../files/nixio.html">nixio.lua</a>
+	</li>
+
+	<li>
+		<a href="../files/test_nixio_dgram.html">test_nixio_dgram.lua</a>
+	</li>
+
+</ul>
+
 
 
 
@@ -110,255 +172,260 @@
 <h2>Functions</h2>
 <table class="function_list">
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.bind">nixio.bind</a>&nbsp;(host, port, family, socktype)</td>
-	<td class="summary">Create a new socket and bind it to a network address.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.bind">nixio.bind</a>&nbsp;(host, port, family, socktype)</td>
+    <td class="summary">Create a new socket and bind it to a network address.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.chdir">nixio.chdir</a>&nbsp;(path)</td>
-	<td class="summary">Change the working directory.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.chdir">nixio.chdir</a>&nbsp;(path)</td>
+    <td class="summary">Change the working directory.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.closelog">nixio.closelog</a>&nbsp;()</td>
-	<td class="summary">(POSIX) Close the connection to the system logger.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.closelog">nixio.closelog</a>&nbsp;()</td>
+    <td class="summary">(POSIX) Close the connection to the system logger.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.connect">nixio.connect</a>&nbsp;(host, port, family, socktype)</td>
-	<td class="summary">Create a new socket and connect to a network address.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.connect">nixio.connect</a>&nbsp;(host, port, family, socktype)</td>
+    <td class="summary">Create a new socket and connect to a network address.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.crypt">nixio.crypt</a>&nbsp;(key, salt)</td>
-	<td class="summary">(POSIX) Encrypt a user password.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.crypt">nixio.crypt</a>&nbsp;(key, salt)</td>
+    <td class="summary">(POSIX) Encrypt a user password.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.dup">nixio.dup</a>&nbsp;(oldfd, newfd)</td>
-	<td class="summary">Duplicate a file descriptor.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.dup">nixio.dup</a>&nbsp;(oldfd, newfd)</td>
+    <td class="summary">Duplicate a file descriptor.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.errno">nixio.errno</a>&nbsp;()</td>
-	<td class="summary">Get the last system error code.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.errno">nixio.errno</a>&nbsp;()</td>
+    <td class="summary">Get the last system error code.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.exec">nixio.exec</a>&nbsp;(executable, ...)</td>
-	<td class="summary">Execute a file to replace the current process.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.exec">nixio.exec</a>&nbsp;(executable, ...)</td>
+    <td class="summary">Execute a file to replace the current process.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.exece">nixio.exece</a>&nbsp;(executable, arguments, environment)</td>
-	<td class="summary">Execute a file with a custom environment to replace the current process.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.exece">nixio.exece</a>&nbsp;(executable, arguments, environment)</td>
+    <td class="summary">Execute a file with a custom environment to replace the current process.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.execp">nixio.execp</a>&nbsp;(executable, ...)</td>
-	<td class="summary">Invoke the shell and execute a file to replace the current process.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.execp">nixio.execp</a>&nbsp;(executable, ...)</td>
+    <td class="summary">Invoke the shell and execute a file to replace the current process.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.fork">nixio.fork</a>&nbsp;()</td>
-	<td class="summary">(POSIX) Clone the current process.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.fork">nixio.fork</a>&nbsp;()</td>
+    <td class="summary">(POSIX) Clone the current process.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.getaddrinfo">nixio.getaddrinfo</a>&nbsp;(host, family, service)</td>
-	<td class="summary">Look up a hostname and service via DNS.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.getaddrinfo">nixio.getaddrinfo</a>&nbsp;(host, family, service)</td>
+    <td class="summary">Look up a hostname and service via DNS.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.getcwd">nixio.getcwd</a>&nbsp;()</td>
-	<td class="summary">Get the current working directory.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.getcwd">nixio.getcwd</a>&nbsp;()</td>
+    <td class="summary">Get the current working directory.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.getenv">nixio.getenv</a>&nbsp;(variable)</td>
-	<td class="summary">Get the current environment table or a specific environment variable.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.getenv">nixio.getenv</a>&nbsp;(variable)</td>
+    <td class="summary">Get the current environment table or a specific environment variable.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.getgid">nixio.getgid</a>&nbsp;()</td>
-	<td class="summary">(POSIX) Get the group id of the current process.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.getgid">nixio.getgid</a>&nbsp;()</td>
+    <td class="summary">(POSIX) Get the group id of the current process.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.getgr">nixio.getgr</a>&nbsp;(group)</td>
-	<td class="summary">(POSIX) Get all or a specific user group.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.getgr">nixio.getgr</a>&nbsp;(group)</td>
+    <td class="summary">(POSIX) Get all or a specific user group.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.getifaddrs">nixio.getifaddrs</a>&nbsp;()</td>
-	<td class="summary">(Linux, BSD) Get a list of available network interfaces and their addresses.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.getifaddrs">nixio.getifaddrs</a>&nbsp;()</td>
+    <td class="summary">(Linux, BSD) Get a list of available network interfaces and their addresses.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.getnameinfo">nixio.getnameinfo</a>&nbsp;(ipaddr)</td>
-	<td class="summary">Reverse look up an IP-Address via DNS.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.getnameinfo">nixio.getnameinfo</a>&nbsp;(ipaddr)</td>
+    <td class="summary">Reverse look up an IP-Address via DNS.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.getpid">nixio.getpid</a>&nbsp;()</td>
-	<td class="summary">Get the ID of the current process.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.getpid">nixio.getpid</a>&nbsp;()</td>
+    <td class="summary">Get the ID of the current process.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.getppid">nixio.getppid</a>&nbsp;()</td>
-	<td class="summary">(POSIX) Get the parent process id of the current process.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.getppid">nixio.getppid</a>&nbsp;()</td>
+    <td class="summary">(POSIX) Get the parent process id of the current process.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.getpw">nixio.getpw</a>&nbsp;(user)</td>
-	<td class="summary">(POSIX) Get all or a specific user account.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.getpw">nixio.getpw</a>&nbsp;(user)</td>
+    <td class="summary">(POSIX) Get all or a specific user account.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.getsp">nixio.getsp</a>&nbsp;(user)</td>
-	<td class="summary">(Linux, Solaris) Get all or a specific shadow password entry.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.getsp">nixio.getsp</a>&nbsp;(user)</td>
+    <td class="summary">(Linux, Solaris) Get all or a specific shadow password entry.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.getuid">nixio.getuid</a>&nbsp;()</td>
-	<td class="summary">(POSIX) Get the user id of the current process.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.gettime">nixio.gettime</a>&nbsp;()</td>
+    <td class="summary">Get current time in seconds (since epoch: January 1, 1970 UTC).</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.kill">nixio.kill</a>&nbsp;(target, signal)</td>
-	<td class="summary">(POSIX) Send a signal to one or more processes.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.getuid">nixio.getuid</a>&nbsp;()</td>
+    <td class="summary">(POSIX) Get the user id of the current process.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.nanosleep">nixio.nanosleep</a>&nbsp;(seconds, nanoseconds)</td>
-	<td class="summary">Sleep for a specified amount of time.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.kill">nixio.kill</a>&nbsp;(target, signal)</td>
+    <td class="summary">(POSIX) Send a signal to one or more processes.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.nice">nixio.nice</a>&nbsp;(nice)</td>
-	<td class="summary">(POSIX) Change priority of current process.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.nanosleep">nixio.nanosleep</a>&nbsp;(seconds, nanoseconds)</td>
+    <td class="summary">Sleep for a specified amount of time.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.open">nixio.open</a>&nbsp;(path, flags, mode)</td>
-	<td class="summary">Open a file.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.nice">nixio.nice</a>&nbsp;(nice)</td>
+    <td class="summary">(POSIX) Change priority of current process.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.open_flags">nixio.open_flags</a>&nbsp;(flag1, ...)</td>
-	<td class="summary">Generate flags for a call to open().</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.open">nixio.open</a>&nbsp;(path, flags, mode)</td>
+    <td class="summary">Open a file.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.openlog">nixio.openlog</a>&nbsp;(ident, flag1, ...)</td>
-	<td class="summary">(POSIX) Open a connection to the system logger.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.open_flags">nixio.open_flags</a>&nbsp;(flag1, ...)</td>
+    <td class="summary">Generate flags for a call to open().</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.pipe">nixio.pipe</a>&nbsp;()</td>
-	<td class="summary">Create a pipe.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.openlog">nixio.openlog</a>&nbsp;(ident, flag1, ...)</td>
+    <td class="summary">(POSIX) Open a connection to the system logger.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.poll">nixio.poll</a>&nbsp;(fds, timeout)</td>
-	<td class="summary">Wait for some event on a file descriptor.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.pipe">nixio.pipe</a>&nbsp;()</td>
+    <td class="summary">Create a pipe.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.poll_flags">nixio.poll_flags</a>&nbsp;(mode1, ...)</td>
-	<td class="summary">Generate events-bitfield or parse revents-bitfield for poll.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.poll">nixio.poll</a>&nbsp;(fds, timeout)</td>
+    <td class="summary">Wait for some event on a file descriptor.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.sendfile">nixio.sendfile</a>&nbsp;(socket, file, length)</td>
-	<td class="summary">(POSIX) Send data from a file to a socket in kernel-space.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.poll_flags">nixio.poll_flags</a>&nbsp;(mode1, ...)</td>
+    <td class="summary">Generate events-bitfield or parse revents-bitfield for poll.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.setenv">nixio.setenv</a>&nbsp;(variable, value)</td>
-	<td class="summary">Set or unset a environment variable.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.sendfile">nixio.sendfile</a>&nbsp;(socket, file, length)</td>
+    <td class="summary">(POSIX) Send data from a file to a socket in kernel-space.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.setgid">nixio.setgid</a>&nbsp;(gid)</td>
-	<td class="summary">(POSIX) Set the group id of the current process.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.setenv">nixio.setenv</a>&nbsp;(variable, value)</td>
+    <td class="summary">Set or unset a environment variable.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.setlogmask">nixio.setlogmask</a>&nbsp;(priority)</td>
-	<td class="summary">(POSIX) Set the logmask of the system logger for current process.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.setgid">nixio.setgid</a>&nbsp;(gid)</td>
+    <td class="summary">(POSIX) Set the group id of the current process.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.setsid">nixio.setsid</a>&nbsp;()</td>
-	<td class="summary">(POSIX) Create a new session and set the process group ID.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.setlogmask">nixio.setlogmask</a>&nbsp;(priority)</td>
+    <td class="summary">(POSIX) Set the logmask of the system logger for current process.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.setuid">nixio.setuid</a>&nbsp;(gid)</td>
-	<td class="summary">(POSIX) Set the user id of the current process.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.setsid">nixio.setsid</a>&nbsp;()</td>
+    <td class="summary">(POSIX) Create a new session and set the process group ID.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.signal">nixio.signal</a>&nbsp;(signal, handler)</td>
-	<td class="summary">Ignore or use set the default handler for a signal.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.setuid">nixio.setuid</a>&nbsp;(gid)</td>
+    <td class="summary">(POSIX) Set the user id of the current process.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.socket">nixio.socket</a>&nbsp;(domain, type)</td>
-	<td class="summary">Create a new socket.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.signal">nixio.signal</a>&nbsp;(signal, handler)</td>
+    <td class="summary">Ignore or use set the default handler for a signal.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.splice">nixio.splice</a>&nbsp;(fdin, fdout, length, flags)</td>
-	<td class="summary">(Linux) Send data from / to a pipe in kernel-space.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.socket">nixio.socket</a>&nbsp;(domain, type)</td>
+    <td class="summary">Create a new socket.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.splice_flags">nixio.splice_flags</a>&nbsp;(flag1, ...)</td>
-	<td class="summary">(Linux) Generate a flag bitfield for a call to splice.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.splice">nixio.splice</a>&nbsp;(fdin, fdout, length, flags)</td>
+    <td class="summary">(Linux) Send data from / to a pipe in kernel-space.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.strerror">nixio.strerror</a>&nbsp;(errno)</td>
-	<td class="summary">Get the error message for the corresponding error code.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.splice_flags">nixio.splice_flags</a>&nbsp;(flag1, ...)</td>
+    <td class="summary">(Linux) Generate a flag bitfield for a call to splice.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.sysinfo">nixio.sysinfo</a>&nbsp;()</td>
-	<td class="summary">(Linux) Get overall system statistics.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.strerror">nixio.strerror</a>&nbsp;(errno)</td>
+    <td class="summary">Get the error message for the corresponding error code.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.syslog">nixio.syslog</a>&nbsp;(priority)</td>
-	<td class="summary">(POSIX) Write a message to the system logger.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.sysinfo">nixio.sysinfo</a>&nbsp;()</td>
+    <td class="summary">(Linux) Get overall system statistics.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.times">nixio.times</a>&nbsp;()</td>
-	<td class="summary">(POSIX) Get process times.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.syslog">nixio.syslog</a>&nbsp;(priority)</td>
+    <td class="summary">(POSIX) Write a message to the system logger.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.tls">nixio.tls</a>&nbsp;(mode)</td>
-	<td class="summary">Create a new TLS context.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.times">nixio.times</a>&nbsp;()</td>
+    <td class="summary">(POSIX) Get process times.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.umask">nixio.umask</a>&nbsp;(mask)</td>
-	<td class="summary">Sets the file mode creation mask.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.tls">nixio.tls</a>&nbsp;(mode)</td>
+    <td class="summary">Create a new TLS context.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.uname">nixio.uname</a>&nbsp;()</td>
-	<td class="summary">(POSIX) Get information about current system and kernel.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.umask">nixio.umask</a>&nbsp;(mask)</td>
+    <td class="summary">Sets the file mode creation mask.</td>
+    </tr>
 
-	<tr>
-	<td class="name" nowrap><a href="#nixio.waitpid">nixio.waitpid</a>&nbsp;(pid, flag1, ...)</td>
-	<td class="summary">(POSIX) Wait for a process to change state.</td>
-	</tr>
+    <tr>
+    <td class="name" nowrap><a href="#nixio.uname">nixio.uname</a>&nbsp;()</td>
+    <td class="summary">(POSIX) Get information about current system and kernel.</td>
+    </tr>
+
+    <tr>
+    <td class="name" nowrap><a href="#nixio.waitpid">nixio.waitpid</a>&nbsp;(pid, flag1, ...)</td>
+    <td class="summary">(POSIX) Wait for a process to change state.</td>
+    </tr>
 
 </table>
 
@@ -1021,6 +1088,26 @@ Table containing: <ul> <li>name = Name</li> <li>uid = ID</li> <li>gid = Group ID
 
 <h3>Return value:</h3>
 Table containing: <ul> <li>namp = Name</li> <li>expire = Expiration Date</li> <li>flag = Flags</li> <li>inact = Inactivity Date</li> <li>lstchg = Last change</li> <li>max = Maximum</li> <li>min = Minimum</li> <li>warn = Warning</li> <li>pwdp = Password Hash</li> </ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="nixio.gettime"></a><strong>nixio.gettime</strong>&nbsp;()</dt>
+<dd>
+Get current time in seconds (since epoch: January 1, 1970 UTC).
+
+
+
+
+
+
+
+<h3>Return value:</h3>
+current time in seconds.
 
 
 
@@ -1989,9 +2076,9 @@ If the "nohang" is given this function becomes non-blocking.
 </div> <!-- id="main" -->
 
 <div id="about">
-	<p><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0!" height="31" width="88" /></a></p>
+    <p><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0!" height="31" width="88" /></a></p>
 </div> <!-- id="about" -->
 
-</div> <!-- id="container" -->	
+</div> <!-- id="container" -->
 </body>
 </html>
