@@ -217,6 +217,11 @@ module "nixio"
 -- @return  ["exited", "signaled", "stopped"]
 -- @return  [exit code, terminate signal, stop signal]
 
+--- Get current time in seconds (since epoch: January 1, 1970 UTC).
+-- @class function
+-- @name nixio.settime
+-- @return	current time in seconds.
+
 --- (POSIX) Get process times.
 -- @class function
 -- @name nixio.times
