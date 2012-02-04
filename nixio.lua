@@ -219,7 +219,7 @@ module "nixio"
 
 --- Get current time in seconds (since epoch: January 1, 1970 UTC).
 -- @class function
--- @name nixio.settime
+-- @name nixio.gettime
 -- @return	current time in seconds.
 
 --- (POSIX) Get process times.
