@@ -25,7 +25,7 @@
 #include <sys/types.h>
 #include <signal.h>
 
-//for gettime()
+/* for gettime() */
 #ifdef _WIN32
 #include <windows.h>
 #else
