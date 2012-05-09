@@ -15,6 +15,7 @@ ifeq (,$(findstring Darwin,$(OS)))
 	NIXIO_LDFLAGS += -lcrypt
 else
 	EXTRA_CFLAGS += -D__DARWIN__
+	NIXIO_TLS=
 endif
 
 NIXIO_OBJ = src/nixio.o src/socket.o src/sockopt.o src/bind.o src/address.o \

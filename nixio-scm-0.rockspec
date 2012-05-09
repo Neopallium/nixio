@@ -22,11 +22,26 @@ dependencies = {
 	"lua >= 5.1"
 }
 external_dependencies = {
+	platforms = {
+		macosx = {
+			-- OpenSSL deprecated on Mac OSX Lion
+			OPENSSL = {},
+		}
+	},
 	OPENSSL = {
 		header = "openssl/ssl.h",
 	}
 }
 build = {
+	platforms = {
+		macosx = {
+			build_variables = {
+				NIXIO_TLS = "",
+				NIXIO_LDFLAGS = "",
+				LUA_CFLAGS = "$(CFLAGS) -I$(LUA_INCDIR)",
+			},
+		}
+	},
 	type = "make",
 	build_variables = {
 		NIXIO_LDFLAGS = "-lcrypto -L$(OPENSSL_LIBDIR) -I$(OPENSSL_INCDIR)",
