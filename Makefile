@@ -6,9 +6,6 @@ else
 include standalone.mk
 endif
 
-AXTLS_VERSION = 1.2.1
-AXTLS_DIR     = axTLS
-AXTLS_FILE    = $(AXTLS_DIR)-$(AXTLS_VERSION).tar.gz
 NIXIO_TLS    ?= openssl
 NIXIO_SO      = nixio.so
 NIXIO_LDFLAGS =
@@ -26,9 +23,9 @@ NIXIO_OBJ = src/nixio.o src/socket.o src/sockopt.o src/bind.o src/address.o \
 	    $(if $(NIXIO_TLS),src/tls-crypto.o src/tls-context.o src/tls-socket.o,)
 
 ifeq ($(NIXIO_TLS),axtls)
-	TLS_CFLAGS = -IaxTLS/ssl -IaxTLS/crypto -IaxTLS/config -include src/axtls-compat.h
+	TLS_CFLAGS = -I/usr/include/axTLS/ssl -I/usr/include/axTLS/crypto -I/usr/include/axTLS/config -include src/axtls-compat.h
 	TLS_DEPENDS = src/axtls-compat.o
-	NIXIO_OBJ += src/axtls-compat.o src/libaxtls.a
+	NIXIO_OBJ += src/axtls-compat.o /usr/lib/libaxtls.a
 endif
 
 ifeq ($(NIXIO_TLS),openssl)
@@ -79,10 +76,9 @@ src/tls-context.o: $(TLS_DEPENDS) src/tls-context.c
 src/tls-socket.o: $(TLS_DEPENDS) src/tls-socket.c
 	$(COMPILE) $(NIXIO_CFLAGS) $(LUA_CFLAGS) $(FPIC) $(TLS_CFLAGS) -c -o $@ src/tls-socket.c
 	
-src/axtls-compat.o: src/libaxtls.a src/axtls-compat.c
+src/axtls-compat.o: /usr/lib/libaxtls.a src/axtls-compat.c
 	$(COMPILE) $(NIXIO_CFLAGS) $(LUA_CFLAGS) $(FPIC) $(TLS_CFLAGS) -c -o $@ src/axtls-compat.c
 	mkdir -p dist
-	cp -pR axtls-root/* dist/
 endif	
 
 compile: $(NIXIO_OBJ)
@@ -90,31 +86,8 @@ compile: $(NIXIO_OBJ)
 	mkdir -p dist$(LUA_LIBRARYDIR)
 	cp src/$(NIXIO_SO) dist$(LUA_LIBRARYDIR)/$(NIXIO_SO)
 
-$(AXTLS_DIR)/.prepared:
-	#rm -rf $(AXTLS_DIR)
-	#tar xvfz $(AXTLS_FILE)
-	cp axtls-config/.config axtls-config/config.h $(AXTLS_DIR)/config
-	touch $@
-
-src/libaxtls.a: $(AXTLS_DIR)/.prepared
-	$(MAKE) -C $(AXTLS_DIR) CC="$(CC)" CFLAGS="$(CFLAGS) $(EXTRA_CFLAGS) $(FPIC) -Wall -pedantic -I../config -I../ssl -I../crypto" LDFLAGS="$(LDFLAGS)" OS="$(OS)" clean all
-	cp -p $(AXTLS_DIR)/_stage/libaxtls.a src
-	# *************************************************************************
-	#
-	#
-	#
-	# *** WARNING ***
-	# The use of the axTLS cryptographical provider is discouraged!
-	# Please switch to either CyaSSL or OpenSSL.
-	# Support for axTLS might be removed in the near future.
-	#
-	#
-	#
-	#**************************************************************************
-
 clean: luaclean
 	rm -f src/*.o src/*.so src/*.a src/*.dll
-	rm -f $(AXTLS_DIR)/.prepared
 
 install: build
 	cp -pR dist$(LUA_MODULEDIR)/* $(LUA_MODULEDIR)
