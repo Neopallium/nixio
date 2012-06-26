@@ -27,8 +27,8 @@
 static int nixio_gettimeofday(lua_State *L) {
 	struct timeval tv;
 	gettimeofday(&tv, NULL);
-	nixio__pushnumber(L, tv.tv_sec);
-	nixio__pushnumber(L, tv.tv_usec);
+	lua_pushinteger(L, tv.tv_sec);
+	lua_pushinteger(L, tv.tv_usec);
 	return 2;
 }
 
