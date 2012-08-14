@@ -83,7 +83,7 @@ src/axtls-compat.o: /usr/lib/libaxtls.a src/axtls-compat.c
 endif	
 
 compile: $(NIXIO_OBJ)
-	$(LINK) $(SHLIB_FLAGS) $(NIXIO_LDFLAGS) -o src/$(NIXIO_SO) $(NIXIO_OBJ) $(NIXIO_LDFLAGS_POST)
+	$(LINK) $(SHLIB_FLAGS) -o src/$(NIXIO_SO) $(NIXIO_OBJ) $(NIXIO_LDFLAGS) $(NIXIO_LDFLAGS_POST)
 	mkdir -p dist$(LUA_LIBRARYDIR)
 	cp src/$(NIXIO_SO) dist$(LUA_LIBRARYDIR)/$(NIXIO_SO)
 
