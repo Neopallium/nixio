@@ -102,7 +102,7 @@ static int nixio_strerror(lua_State *L) {
 }
 
 /* object table */
-static const luaL_reg R[] = {
+static const luaL_reg nixio_reg[] = {
 	{"errno",		nixio_errno},
 	{"strerror",	nixio_strerror},
 	{NULL,			NULL}
@@ -118,7 +118,7 @@ NIXIO_API int luaopen_nixio(lua_State *L) {
 	lua_setfield(L, -2, "__index");
 
 	/* register module */
-	luaL_register(L, "nixio", R);
+	luaL_register(L, "nixio", nixio_reg);
 
 	/* register metatable as socket_meta */
 	lua_pushvalue(L, -2);
