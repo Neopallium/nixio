@@ -256,7 +256,7 @@ static int nixio_sock_accept(lua_State *L) {
 	luaL_getmetatable(L, NIXIO_META);
 	lua_setmetatable(L, -2);
 
-	memcpy(clsock, sock, sizeof(clsock));
+	memcpy(clsock, sock, sizeof(nixio_sock));
 	clsock->fd = newfd;
 
 	if (!nixio__addr_parse(&addr, (struct sockaddr *)&saddr)) {
