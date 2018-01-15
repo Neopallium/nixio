@@ -164,6 +164,7 @@ static int nixio_pipe(lua_State *L) {
 	*udata = pipefd[1];
 	lua_pushvalue(L, -3);
 	lua_setmetatable(L, -2);
+	lua_remove(L, -3);
 
 	return 2;
 }
