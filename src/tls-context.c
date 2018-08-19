@@ -54,9 +54,17 @@ static int nixio_tls_ctx(lua_State * L) {
 	lua_setmetatable(L, -2);
 
 	if (!strcmp(method, "client")) {
+#if OPENSSL_VERSION_NUMBER < 0x10100000L
 		*ctx = SSL_CTX_new(TLSv1_client_method());
+#else
+		*ctx = SSL_CTX_new(TLS_client_method());
+#endif
 	} else if (!strcmp(method, "server")) {
+#if OPENSSL_VERSION_NUMBER < 0x10100000L
 		*ctx = SSL_CTX_new(TLSv1_server_method());
+#else
+		*ctx = SSL_CTX_new(TLS_server_method());
+#endif
 	} else {
 		return luaL_argerror(L, 1, "supported values: client, server");
 	}
