@@ -73,7 +73,7 @@ int nixio__exec(lua_State *L, int m) {
 					return luaL_error(L, "stack overflow");
 				}
 
-				if (!lua_type(L, -2) != LUA_TSTRING || !lua_isstring(L, -1)) {
+				if (lua_type(L, -2) != LUA_TSTRING || !lua_isstring(L, -1)) {
 					return luaL_argerror(L, 3, "invalid environment");
 				}
 
