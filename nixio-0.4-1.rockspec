@@ -3,7 +3,7 @@
 package = "nixio"
 version = "0.4-1"
 source = {
-	url = "git://github.com/spiccinini/nixio.git",
+	url = "git://github.com/Neopallium/nixio.git",
 	tag = "v0.4",
 }
 description = {
