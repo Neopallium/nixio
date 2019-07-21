@@ -194,7 +194,7 @@ static int nixio_sock__bind_connect(lua_State *L, int do_bind) {
 		struct sockaddr_un addr;
 		addr.sun_family = AF_UNIX;
 		luaL_argcheck(L, pathlen < sizeof(addr.sun_path), 2, "out of range");
-		strncpy(addr.sun_path, path, sizeof(addr.sun_path));
+		strncpy(addr.sun_path, path, sizeof(addr.sun_path) - 1);
 
 		if (do_bind) {
 			status = bind(sock->fd, (struct sockaddr*)&addr, sizeof(addr));
