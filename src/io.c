@@ -62,7 +62,7 @@ static int nixio_sock__sendto(lua_State *L, int to) {
 
 			addr_un.sun_family = AF_UNIX;
 			luaL_argcheck(L, pathlen < sizeof(addr_un.sun_path), 3, "out of range");
-			strncpy(addr_un.sun_path, path, sizeof(addr_un.sun_path));
+			strncpy(addr_un.sun_path, path, sizeof(addr_un.sun_path) - 1);
 
 			addr = (struct sockaddr*)&addr_un;
 			alen = sizeof(addr_un);
