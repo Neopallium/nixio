@@ -235,6 +235,12 @@ static int nixio__getsetsockopt(lua_State *L, int set) {
 			return nixio__gso_int(L, sock->fd, SOL_SOCKET, SO_KEEPALIVE, set);
 		} else if (!strcmp(option, "reuseaddr")) {
 			return nixio__gso_int(L, sock->fd, SOL_SOCKET, SO_REUSEADDR, set);
+#ifdef SO_REUSEPORT
+		} else if (!strcmp(option, "reuseport")) {
+			return nixio__gso_int(L, sock->fd, SOL_SOCKET, SO_REUSEPORT, set);
+#else
+			return nixio__pstatus(L, !(errno = ENOPROTOOPT));
+#endif
 		} else if (!strcmp(option, "rcvbuf")) {
 			return nixio__gso_int(L, sock->fd, SOL_SOCKET, SO_RCVBUF, set);
 		} else if (!strcmp(option, "sndbuf")) {
@@ -267,8 +273,8 @@ static int nixio__getsetsockopt(lua_State *L, int set) {
 #endif
 		} else {
 			return luaL_argerror(L, 3, "supported values: keepalive, reuseaddr,"
-			 " sndbuf, rcvbuf, priority, broadcast, linger, sndtimeo, rcvtimeo,"
-			 " dontroute, bindtodevice, error, oobinline"
+			 " reuseport, sndbuf, rcvbuf, priority, broadcast, linger, sndtimeo,"
+			 " rcvtimeo, dontroute, bindtodevice, error, oobinline"
 			);
 		}
 	} else if (!strcmp(level, "tcp")) {
