@@ -150,7 +150,7 @@ NIXIO_API int luaopen_nixio(lua_State *L) {
 #endif
 
 	/* module version */
-	lua_pushinteger(L, VERSION);
+	lua_pushnumber(L, VERSION);
 	lua_setfield(L, -2, "version");
 
 	/* some constants */
