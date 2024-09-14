@@ -24,9 +24,10 @@ NIXIO_OBJ = src/nixio.o src/socket.o src/sockopt.o src/bind.o src/address.o \
 	    $(if $(NIXIO_TLS),src/tls-crypto.o src/tls-context.o src/tls-socket.o,)
 
 ifeq ($(NIXIO_TLS),axtls)
-	TLS_CFLAGS = -I/usr/include/axTLS/ssl -I/usr/include/axTLS/crypto -I/usr/include/axTLS/config -include src/axtls-compat.h
+	TLS_CFLAGS = -I/usr/include/axTLS -I/usr/include/axTLS -I/usr/include/axTLS -include src/axtls-compat.h
 	TLS_DEPENDS = src/axtls-compat.o
-	NIXIO_OBJ += src/axtls-compat.o /usr/lib/libaxtls.a
+	NIXIO_OBJ += src/axtls-compat.o
+	NIXIO_LDFLAGS += -laxtls
 endif
 
 ifeq ($(NIXIO_TLS),openssl)
@@ -77,7 +78,7 @@ src/tls-context.o: $(TLS_DEPENDS) src/tls-context.c
 src/tls-socket.o: $(TLS_DEPENDS) src/tls-socket.c
 	$(COMPILE) $(NIXIO_CFLAGS) $(LUA_CFLAGS) $(FPIC) $(TLS_CFLAGS) -c -o $@ src/tls-socket.c
 	
-src/axtls-compat.o: /usr/lib/libaxtls.a src/axtls-compat.c
+src/axtls-compat.o: src/axtls-compat.c
 	$(COMPILE) $(NIXIO_CFLAGS) $(LUA_CFLAGS) $(FPIC) $(TLS_CFLAGS) -c -o $@ src/axtls-compat.c
 	mkdir -p dist
 endif	
