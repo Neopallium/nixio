@@ -1,6 +1,13 @@
 --- General POSIX IO library.
 module "nixio"
 
+--- Constants in the `nixio` module.
+-- @field stdin Standard input (FD 0)
+-- @field stdout Standard output (FD 1)
+-- @field stderr Standard error (FD 2)
+-- @field version Nixio version as a string.
+-- @table constants
+
 --- Look up a hostname and service via DNS.
 -- @class function
 -- @name nixio.getaddrinfo
