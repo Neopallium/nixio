@@ -22,7 +22,7 @@
 #include <errno.h>
 #include <signal.h>
 
-#define VERSION "0.4"
+#define VERSION "0.4.1"
 
 #if (LUA_VERSION_NUM == 501)
 /*
