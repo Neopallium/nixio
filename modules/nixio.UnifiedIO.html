@@ -1,624 +1,490 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <head>
-    <title>nixio.UnifiedIO: Module Index</title>
-    <link rel="stylesheet" href="../luadoc.css" type="text/css" />
-    <!--meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/-->
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
 </head>
-
 <body>
+
 <div id="container">
 
 <div id="product">
-    <div id="product_logo"></div>
-    <div id="product_name"><big><b></b></big></div>
-    <div id="product_description"></div>
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
 </div> <!-- id="product" -->
+
 
 <div id="main">
 
+
+<!-- Menu -->
+
 <div id="navigation">
+<br/>
+<h1>ldoc</h1>
 
 
-<h1>LuaDoc</h1>
 <ul>
-	
-	<li><a href="../index.html">Index</a></li>
-	
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
 </ul>
 
 
-<!-- Module list -->
-
-<h1>Modules</h1>
-<ul>
-
-	<li>
-		<a href="../modules/CHANGELOG.html">CHANGELOG</a>
-	</li>
-
-	<li>
-		<a href="../modules/README.html">README</a>
-	</li>
-
-	<li>
-		<a href="../modules/nixio.html">nixio</a>
-	</li>
-
-	<li>
-		<a href="../modules/nixio.CryptoHash.html">nixio.CryptoHash</a>
-	</li>
-
-	<li>
-		<a href="../modules/nixio.File.html">nixio.File</a>
-	</li>
-
-	<li>
-		<a href="../modules/nixio.Socket.html">nixio.Socket</a>
-	</li>
-
-	<li>
-		<a href="../modules/nixio.TLSContext.html">nixio.TLSContext</a>
-	</li>
-
-	<li>
-		<a href="../modules/nixio.TLSSocket.html">nixio.TLSSocket</a>
-	</li>
-
-	<li><strong>nixio.UnifiedIO</strong></li>
-	
-	<li>
-		<a href="../modules/nixio.bin.html">nixio.bin</a>
-	</li>
-
-	<li>
-		<a href="../modules/nixio.bit.html">nixio.bit</a>
-	</li>
-
-	<li>
-		<a href="../modules/nixio.crypto.html">nixio.crypto</a>
-	</li>
-
-	<li>
-		<a href="../modules/nixio.fs.html">nixio.fs</a>
-	</li>
-
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/CHANGELOG.html">CHANGELOG</a></li>
+  <li><a href="../modules/README.html">README</a></li>
+  <li><a href="../modules/nixio.CryptoHash.html">nixio.CryptoHash</a></li>
+  <li><a href="../modules/nixio.File.html">nixio.File</a></li>
+  <li><a href="../modules/nixio.Socket.html">nixio.Socket</a></li>
+  <li><a href="../modules/nixio.TLSContext.html">nixio.TLSContext</a></li>
+  <li><a href="../modules/nixio.TLSSocket.html">nixio.TLSSocket</a></li>
+  <li><strong>nixio.UnifiedIO</strong></li>
+  <li><a href="../modules/nixio.bin.html">nixio.bin</a></li>
+  <li><a href="../modules/nixio.bit.html">nixio.bit</a></li>
+  <li><a href="../modules/nixio.crypto.html">nixio.crypto</a></li>
+  <li><a href="../modules/nixio.fs.html">nixio.fs</a></li>
+  <li><a href="../modules/nixio.html">nixio</a></li>
 </ul>
 
-
-
-<!-- File list -->
-
-
-
-
-
-
-</div><!-- id="navigation" -->
+</div>
 
 <div id="content">
 
 <h1>Module <code>nixio.UnifiedIO</code></h1>
+<p>Unified high-level I/O utility API for Files, Sockets and TLS-Sockets.</p>
+<p>
+ These functions are added to the object function tables by doing <strong>
+ require "nixio.util"</strong>, can be used on all nixio IO  Descriptors and
+ are based on the shared low-level read() and write() functions.</p>
 
-<p>Unified high-level I/O utility API for Files, Sockets and TLS-Sockets. These functions are added to the object function tables by doing <strong> require "nixio.util"</strong>, can be used on all nixio IO  Descriptors and are based on the shared low-level read() and write() functions.</p>
 
-
-
-
-
-<h2>Functions</h2>
+<h2><a href="#Functions">Functions</a></h2>
 <table class="function_list">
-
-    <tr>
-    <td class="name" nowrap><a href="#UnifiedIO.blocksource">UnifiedIO.blocksource</a>&nbsp;(blocksize, limit)</td>
-    <td class="summary">Create a block-based iterator.</td>
-    </tr>
-
-    <tr>
-    <td class="name" nowrap><a href="#UnifiedIO.close">UnifiedIO.close</a>&nbsp;()</td>
-    <td class="summary">Close the descriptor.</td>
-    </tr>
-
-    <tr>
-    <td class="name" nowrap><a href="#UnifiedIO.copy">UnifiedIO.copy</a>&nbsp;(fdout, size)</td>
-    <td class="summary">Copy data from the current descriptor to another one.</td>
-    </tr>
-
-    <tr>
-    <td class="name" nowrap><a href="#UnifiedIO.copyz">UnifiedIO.copyz</a>&nbsp;(fdout, size)</td>
-    <td class="summary">Copy data from the current descriptor to another one using kernel-space copying if possible.</td>
-    </tr>
-
-    <tr>
-    <td class="name" nowrap><a href="#UnifiedIO.is_file">UnifiedIO.is_file</a>&nbsp;()</td>
-    <td class="summary">Test whether the I/O-Descriptor is a file.</td>
-    </tr>
-
-    <tr>
-    <td class="name" nowrap><a href="#UnifiedIO.is_socket">UnifiedIO.is_socket</a>&nbsp;()</td>
-    <td class="summary">Test whether the I/O-Descriptor is a socket.</td>
-    </tr>
-
-    <tr>
-    <td class="name" nowrap><a href="#UnifiedIO.is_tls_socket">UnifiedIO.is_tls_socket</a>&nbsp;()</td>
-    <td class="summary">Test whether the I/O-Descriptor is a TLS socket.</td>
-    </tr>
-
-    <tr>
-    <td class="name" nowrap><a href="#UnifiedIO.linesource">UnifiedIO.linesource</a>&nbsp;(limit)</td>
-    <td class="summary">Create a line-based iterator.</td>
-    </tr>
-
-    <tr>
-    <td class="name" nowrap><a href="#UnifiedIO.readall">UnifiedIO.readall</a>&nbsp;(length)</td>
-    <td class="summary">Read a block of data and wait until all data is available.</td>
-    </tr>
-
-    <tr>
-    <td class="name" nowrap><a href="#UnifiedIO.sink">UnifiedIO.sink</a>&nbsp;(close_when_done)</td>
-    <td class="summary">Create a sink.</td>
-    </tr>
-
-    <tr>
-    <td class="name" nowrap><a href="#UnifiedIO.writeall">UnifiedIO.writeall</a>&nbsp;(block)</td>
-    <td class="summary">Write a block of data and wait until all data is written.</td>
-    </tr>
-
+	<tr>
+	<td class="name" nowrap><a href="#is_socket">is_socket ()</a></td>
+	<td class="summary">Test whether the I/O-Descriptor is a socket.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#is_tls_socket">is_tls_socket ()</a></td>
+	<td class="summary">Test whether the I/O-Descriptor is a TLS socket.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#is_file">is_file ()</a></td>
+	<td class="summary">Test whether the I/O-Descriptor is a file.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#readall">readall (length)</a></td>
+	<td class="summary">Read a block of data and wait until all data is available.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#writeall">writeall (block)</a></td>
+	<td class="summary">Write a block of data and wait until all data is written.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#linesource">linesource (limit)</a></td>
+	<td class="summary">Create a line-based iterator.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#blocksource">blocksource (blocksize, limit)</a></td>
+	<td class="summary">Create a block-based iterator.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#sink">sink (close_when_done)</a></td>
+	<td class="summary">Create a sink.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#copy">copy (fdout, size)</a></td>
+	<td class="summary">Copy data from the current descriptor to another one.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#copyz">copyz (fdout, size)</a></td>
+	<td class="summary">Copy data from the current descriptor to another one using kernel-space
+ copying if possible.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#close">close ()</a></td>
+	<td class="summary">Close the descriptor.</td>
+	</tr>
 </table>
 
-
-
-
-
-
 <br/>
 <br/>
 
 
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
 
-<h2><a name="functions"></a>Functions</h2>
-<dl class="function">
-
-
-
-<dt><a name="UnifiedIO.blocksource"></a><strong>UnifiedIO.blocksource</strong>&nbsp;(blocksize, limit)</dt>
-<dd>
-Create a block-based iterator.
-
-
-<h3>Parameters</h3>
-<ul>
-	
-	<li>
-	  blocksize: Advisory blocksize (optional)
-	</li>
-	
-	<li>
-	  limit: Amount of data to consume (optional)
-	</li>
-	
-</ul>
+    <dl class="function">
+    <dt>
+    <a name = "is_socket"></a>
+    <strong>is_socket ()</strong>
+    </dt>
+    <dd>
+    Test whether the I/O-Descriptor is a socket.
 
 
 
+    <h3>Returns:</h3>
+    <ol>
 
-<h3>Usage</h3>
-<ul>
-	
-	<li>This function uses the low-level read function of the descriptor.
-	
-	<li>The blocksize given is only advisory and to be seen as an upper limit, if an underlying read returns less bytes the chunk is nevertheless returned.
-	
-	<li>If the limit parameter is ommited, the iterator returns data until an end-of-file, end-of-stream, connection shutdown or similar happens.
-	
-	<li>The iterator will not buffer so it is safe to mix with calls to read.
-	
-	<li>If the descriptor is non-blocking the iterator may fail with EAGAIN.
-	
-	<li>The iterator can be used as an LTN12 source.
-	
-</ul>
+        boolean
+    </ol>
 
-
-
-<h3>Return value:</h3>
-Block-based Iterator
 
 
 
 </dd>
+    <dt>
+    <a name = "is_tls_socket"></a>
+    <strong>is_tls_socket ()</strong>
+    </dt>
+    <dd>
+    Test whether the I/O-Descriptor is a TLS socket.
 
 
 
+    <h3>Returns:</h3>
+    <ol>
 
-<dt><a name="UnifiedIO.close"></a><strong>UnifiedIO.close</strong>&nbsp;()</dt>
-<dd>
-Close the descriptor.
+        boolean
+    </ol>
 
-
-
-
-
-<h3>Usage:</h3>
-If the descriptor is a TLS-socket the underlying descriptor is closed without touching the TLS connection.
-
-
-
-<h3>Return value:</h3>
-true
 
 
 
 </dd>
+    <dt>
+    <a name = "is_file"></a>
+    <strong>is_file ()</strong>
+    </dt>
+    <dd>
+    Test whether the I/O-Descriptor is a file.
 
 
 
+    <h3>Returns:</h3>
+    <ol>
 
-<dt><a name="UnifiedIO.copy"></a><strong>UnifiedIO.copy</strong>&nbsp;(fdout, size)</dt>
-<dd>
-Copy data from the current descriptor to another one.
+        boolean
+    </ol>
 
-
-<h3>Parameters</h3>
-<ul>
-	
-	<li>
-	  fdout: Target Descriptor
-	</li>
-	
-	<li>
-	  size: Bytes to copy (optional)
-	</li>
-	
-</ul>
-
-
-
-
-<h3>Usage</h3>
-<ul>
-	
-	<li>This function uses the blocksource function of the source descriptor and the sink function of the target descriptor.
-	
-	<li>If the limit parameter is ommited, data is copied until an end-of-file, end-of-stream, connection shutdown or similar happens.
-	
-	<li>If the descriptor is non-blocking the function may fail with EAGAIN.
-	
-</ul>
-
-
-
-<h3>Return values:</h3>
-<ol>
-	
-	<li>bytes that were successfully written if no error occured
-	
-	<li>- reserved for error code -
-	
-	<li>- reserved for error message -
-	
-	<li>bytes that were successfully written even if an error occured
-	
-</ol>
 
 
 
 </dd>
+    <dt>
+    <a name = "readall"></a>
+    <strong>readall (length)</strong>
+    </dt>
+    <dd>
+    Read a block of data and wait until all data is available.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">length</span>
+        	Bytes to read (optional)
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        data that was successfully read if no error occured</li>
+        <li>
+        - reserved for error code -</li>
+        <li>
+        - reserved for error message -</li>
+        <li>
+        data that was successfully read even if an error occured</li>
+    </ol>
 
 
 
-
-<dt><a name="UnifiedIO.copyz"></a><strong>UnifiedIO.copyz</strong>&nbsp;(fdout, size)</dt>
-<dd>
-Copy data from the current descriptor to another one using kernel-space copying if possible.
-
-
-<h3>Parameters</h3>
-<ul>
-	
-	<li>
-	  fdout: Target Descriptor
-	</li>
-	
-	<li>
-	  size: Bytes to copy (optional)
-	</li>
-	
-</ul>
-
-
-
-
-<h3>Usage</h3>
-<ul>
-	
-	<li>This function uses the sendfile() syscall to copy the data or the blocksource function of the source descriptor and the sink function of the target descriptor as a fallback mechanism.
-	
-	<li>If the limit parameter is ommited, data is copied until an end-of-file, end-of-stream, connection shutdown or similar happens.
-	
-	<li>If the descriptor is non-blocking the function may fail with EAGAIN.
-	
-</ul>
-
-
-
-<h3>Return values:</h3>
-<ol>
-	
-	<li>bytes that were successfully written if no error occured
-	
-	<li>- reserved for error code -
-	
-	<li>- reserved for error message -
-	
-	<li>bytes that were successfully written even if an error occured
-	
-</ol>
-
-
+    <h3>Usage:</h3>
+    <ul>
+        <li><pre class="example">This <span class="keyword">function</span> uses the low-level read <span class="keyword">function</span> of the descriptor.</pre></li>
+        <li><pre class="example">If the length parameter is ommited, this <span class="keyword">function</span> returns all data
+that can be read before an <span class="keyword">end</span>-of-file, <span class="keyword">end</span>-of-stream, connection shutdown
+<span class="keyword">or</span> similar happens.</pre></li>
+        <li><pre class="example">If the descriptor is non-blocking this <span class="keyword">function</span> may fail with EAGAIN.</pre></li>
+    </ul>
 
 </dd>
+    <dt>
+    <a name = "writeall"></a>
+    <strong>writeall (block)</strong>
+    </dt>
+    <dd>
+    Write a block of data and wait until all data is written.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">block</span>
+        	Bytes to write
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        bytes that were successfully written if no error occured</li>
+        <li>
+        - reserved for error code -</li>
+        <li>
+        - reserved for error message -</li>
+        <li>
+        bytes that were successfully written even if an error occured</li>
+    </ol>
 
 
 
-
-<dt><a name="UnifiedIO.is_file"></a><strong>UnifiedIO.is_file</strong>&nbsp;()</dt>
-<dd>
-Test whether the I/O-Descriptor is a file.
-
-
-
-
-
-
-
-<h3>Return value:</h3>
-boolean
-
-
-
-</dd>
-
-
-
-
-<dt><a name="UnifiedIO.is_socket"></a><strong>UnifiedIO.is_socket</strong>&nbsp;()</dt>
-<dd>
-Test whether the I/O-Descriptor is a socket.
-
-
-
-
-
-
-
-<h3>Return value:</h3>
-boolean
-
-
+    <h3>Usage:</h3>
+    <ul>
+        <li><pre class="example">This <span class="keyword">function</span> uses the low-level write <span class="keyword">function</span> of the descriptor.</pre></li>
+        <li><pre class="example">If the descriptor is non-blocking this <span class="keyword">function</span> may fail with EAGAIN.</pre></li>
+    </ul>
 
 </dd>
+    <dt>
+    <a name = "linesource"></a>
+    <strong>linesource (limit)</strong>
+    </dt>
+    <dd>
+    Create a line-based iterator.
+ Lines may end with either \n or \r\n, these control chars are not included
+ in the return value.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">limit</span>
+        	Line limit
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        Line-based Iterator
+    </ol>
 
 
 
-
-<dt><a name="UnifiedIO.is_tls_socket"></a><strong>UnifiedIO.is_tls_socket</strong>&nbsp;()</dt>
-<dd>
-Test whether the I/O-Descriptor is a TLS socket.
-
-
-
-
-
-
-
-<h3>Return value:</h3>
-boolean
-
-
-
-</dd>
-
-
-
-
-<dt><a name="UnifiedIO.linesource"></a><strong>UnifiedIO.linesource</strong>&nbsp;(limit)</dt>
-<dd>
-Create a line-based iterator. Lines may end with either \n or \r\n, these control chars are not included in the return value.
-
-
-<h3>Parameters</h3>
-<ul>
-	
-	<li>
-	  limit: Line limit
-	</li>
-	
-</ul>
-
-
-
-
-<h3>Usage</h3>
-<ul>
-	
-	<li>This function uses the low-level read function of the descriptor.
-	
-	<li><strong>Note:</strong> This function uses an internal buffer to read ahead. Do NOT mix calls to read(all) and the returned iterator. If you want to stop reading line-based and want to use the read(all) functions instead you can pass "true" to the iterator which will flush the buffer and return the bufferd data.
-	
-	<li>If the limit parameter is ommited, this function uses the nixio buffersize (8192B by default).
-	
-	<li>If the descriptor is non-blocking the iterator may fail with EAGAIN.
-	
-	<li>The iterator can be used as an LTN12 source.
-	
-</ul>
-
-
-
-<h3>Return value:</h3>
-Line-based Iterator
-
-
+    <h3>Usage:</h3>
+    <ul>
+        <li><pre class="example">This <span class="keyword">function</span> uses the low-level read <span class="keyword">function</span> of the descriptor.</pre></li>
+        <li><pre class="example">&lt;strong&gt;Note:&lt;/strong&gt; This <span class="keyword">function</span> uses an internal buffer to read
+ahead. Do NOT mix calls to <span class="function-name">read</span>(all) <span class="keyword">and</span> the returned iterator. If you want
+to stop reading line-based <span class="keyword">and</span> want to use the <span class="function-name">read</span>(all) functions instead
+you can <span class="function-name">pass</span> <span class="string">"true"</span> to the iterator which will flush the buffer
+<span class="keyword">and</span> <span class="keyword">return</span> the bufferd data.</pre></li>
+        <li><pre class="example">If the limit parameter is ommited, this <span class="keyword">function</span> uses the nixio
+ <span class="function-name">buffersize</span> (<span class="number">8192</span>B by default).</pre></li>
+        <li><pre class="example">If the descriptor is non-blocking the iterator may fail with EAGAIN.</pre></li>
+        <li><pre class="example">The iterator can be used as an LTN12 source.</pre></li>
+    </ul>
 
 </dd>
+    <dt>
+    <a name = "blocksource"></a>
+    <strong>blocksource (blocksize, limit)</strong>
+    </dt>
+    <dd>
+    Create a block-based iterator.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">blocksize</span>
+        	Advisory blocksize (optional)
+        </li>
+        <li><span class="parameter">limit</span>
+        		Amount of data to consume (optional)
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        Block-based Iterator
+    </ol>
 
 
 
-
-<dt><a name="UnifiedIO.readall"></a><strong>UnifiedIO.readall</strong>&nbsp;(length)</dt>
-<dd>
-Read a block of data and wait until all data is available.
-
-
-<h3>Parameters</h3>
-<ul>
-	
-	<li>
-	  length: Bytes to read (optional)
-	</li>
-	
-</ul>
-
-
-
-
-<h3>Usage</h3>
-<ul>
-	
-	<li>This function uses the low-level read function of the descriptor.
-	
-	<li>If the length parameter is ommited, this function returns all data that can be read before an end-of-file, end-of-stream, connection shutdown or similar happens.
-	
-	<li>If the descriptor is non-blocking this function may fail with EAGAIN.
-	
-</ul>
-
-
-
-<h3>Return values:</h3>
-<ol>
-	
-	<li>data that was successfully read if no error occured
-	
-	<li>- reserved for error code -
-	
-	<li>- reserved for error message -
-	
-	<li>data that was successfully read even if an error occured
-	
-</ol>
-
-
+    <h3>Usage:</h3>
+    <ul>
+        <li><pre class="example">This <span class="keyword">function</span> uses the low-level read <span class="keyword">function</span> of the descriptor.</pre></li>
+        <li><pre class="example">The blocksize given is only advisory <span class="keyword">and</span> to be seen as an upper limit,
+ <span class="keyword">if</span> an underlying read returns less bytes the chunk is nevertheless returned.</pre></li>
+        <li><pre class="example">If the limit parameter is ommited, the iterator returns data
+ <span class="keyword">until</span> an <span class="keyword">end</span>-of-file, <span class="keyword">end</span>-of-stream, connection shutdown <span class="keyword">or</span> similar happens.</pre></li>
+        <li><pre class="example">The iterator will <span class="keyword">not</span> buffer so it is safe to mix with calls to read.</pre></li>
+        <li><pre class="example">If the descriptor is non-blocking the iterator may fail with EAGAIN.</pre></li>
+        <li><pre class="example">The iterator can be used as an LTN12 source.</pre></li>
+    </ul>
 
 </dd>
+    <dt>
+    <a name = "sink"></a>
+    <strong>sink (close_when_done)</strong>
+    </dt>
+    <dd>
+    Create a sink.
+ This sink will simply write all data that it receives and optionally
+ close the descriptor afterwards.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">close_when_done</span>
+        	(optional, boolean)
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        Sink
+    </ol>
 
 
 
-
-<dt><a name="UnifiedIO.sink"></a><strong>UnifiedIO.sink</strong>&nbsp;(close_when_done)</dt>
-<dd>
-Create a sink. This sink will simply write all data that it receives and optionally close the descriptor afterwards.
-
-
-<h3>Parameters</h3>
-<ul>
-	
-	<li>
-	  close_when_done: (optional, boolean)
-	</li>
-	
-</ul>
-
-
-
-
-<h3>Usage</h3>
-<ul>
-	
-	<li>This function uses the writeall function of the descriptor.
-	
-	<li>If the descriptor is non-blocking the sink may fail with EAGAIN.
-	
-	<li>The iterator can be used as an LTN12 sink.
-	
-</ul>
-
-
-
-<h3>Return value:</h3>
-Sink
-
-
+    <h3>Usage:</h3>
+    <ul>
+        <li><pre class="example">This <span class="keyword">function</span> uses the writeall <span class="keyword">function</span> of the descriptor.</pre></li>
+        <li><pre class="example">If the descriptor is non-blocking the sink may fail with EAGAIN.</pre></li>
+        <li><pre class="example">The iterator can be used as an LTN12 sink.</pre></li>
+    </ul>
 
 </dd>
+    <dt>
+    <a name = "copy"></a>
+    <strong>copy (fdout, size)</strong>
+    </dt>
+    <dd>
+    Copy data from the current descriptor to another one.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">fdout</span>
+         Target Descriptor
+        </li>
+        <li><span class="parameter">size</span>
+          Bytes to copy (optional)
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        bytes that were successfully written if no error occured</li>
+        <li>
+        - reserved for error code -</li>
+        <li>
+        - reserved for error message -</li>
+        <li>
+        bytes that were successfully written even if an error occured</li>
+    </ol>
 
 
 
-
-<dt><a name="UnifiedIO.writeall"></a><strong>UnifiedIO.writeall</strong>&nbsp;(block)</dt>
-<dd>
-Write a block of data and wait until all data is written.
-
-
-<h3>Parameters</h3>
-<ul>
-	
-	<li>
-	  block: Bytes to write
-	</li>
-	
-</ul>
-
-
-
-
-<h3>Usage</h3>
-<ul>
-	
-	<li>This function uses the low-level write function of the descriptor.
-	
-	<li>If the descriptor is non-blocking this function may fail with EAGAIN.
-	
-</ul>
-
-
-
-<h3>Return values:</h3>
-<ol>
-	
-	<li>bytes that were successfully written if no error occured
-	
-	<li>- reserved for error code -
-	
-	<li>- reserved for error message -
-	
-	<li>bytes that were successfully written even if an error occured
-	
-</ol>
-
-
+    <h3>Usage:</h3>
+    <ul>
+        <li><pre class="example">This <span class="keyword">function</span> uses the blocksource <span class="keyword">function</span> of the source descriptor
+ <span class="keyword">and</span> the sink <span class="keyword">function</span> of the target descriptor.</pre></li>
+        <li><pre class="example">If the limit parameter is ommited, data is copied
+ <span class="keyword">until</span> an <span class="keyword">end</span>-of-file, <span class="keyword">end</span>-of-stream, connection shutdown <span class="keyword">or</span> similar happens.</pre></li>
+        <li><pre class="example">If the descriptor is non-blocking the <span class="keyword">function</span> may fail with EAGAIN.</pre></li>
+    </ul>
 
 </dd>
+    <dt>
+    <a name = "copyz"></a>
+    <strong>copyz (fdout, size)</strong>
+    </dt>
+    <dd>
+    Copy data from the current descriptor to another one using kernel-space
+ copying if possible.
 
 
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">fdout</span>
+         Target Descriptor
+        </li>
+        <li><span class="parameter">size</span>
+          Bytes to copy (optional)
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        bytes that were successfully written if no error occured</li>
+        <li>
+        - reserved for error code -</li>
+        <li>
+        - reserved for error message -</li>
+        <li>
+        bytes that were successfully written even if an error occured</li>
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <li><pre class="example">This <span class="keyword">function</span> uses the <span class="function-name">sendfile</span>() syscall to copy the data <span class="keyword">or</span> the
+blocksource <span class="keyword">function</span> of the source descriptor <span class="keyword">and</span> the sink <span class="keyword">function</span>
+of the target descriptor as a fallback mechanism.</pre></li>
+        <li><pre class="example">If the limit parameter is ommited, data is copied
+ <span class="keyword">until</span> an <span class="keyword">end</span>-of-file, <span class="keyword">end</span>-of-stream, connection shutdown <span class="keyword">or</span> similar happens.</pre></li>
+        <li><pre class="example">If the descriptor is non-blocking the <span class="keyword">function</span> may fail with EAGAIN.</pre></li>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "close"></a>
+    <strong>close ()</strong>
+    </dt>
+    <dd>
+    Close the descriptor.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">If the descriptor is a TLS-socket the underlying descriptor is
+ closed without touching the TLS connection.</pre>
+    </ul>
+
+</dd>
 </dl>
 
 
-
-
-
-
 </div> <!-- id="content" -->
-
 </div> <!-- id="main" -->
-
 <div id="about">
-    <p><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0!" height="31" width="88" /></a></p>
+<i>generated by <a href="http://github.com/lunarmodules/LDoc">LDoc 1.5.0</a></i>
+<i style="float:right;">Last updated 2024-09-14 22:42:52 </i>
 </div> <!-- id="about" -->
-
 </div> <!-- id="container" -->
 </body>
 </html>
