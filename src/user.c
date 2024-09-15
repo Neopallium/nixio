@@ -253,5 +253,5 @@ static const luaL_Reg R[] = {
 #endif
 
 void nixio_open_user(lua_State *L) {
-	luaL_register(L, NULL, R);
+	luaL_setfuncs(L, R, 0);
 }

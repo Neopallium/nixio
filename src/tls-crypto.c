@@ -290,13 +290,13 @@ static const luaL_Reg M[] = {
 
 void nixio_open_tls_crypto(lua_State *L) {
 	luaL_newmetatable(L, NIXIO_CRYPTO_HASH_META);
-	luaL_register(L, NULL, M);
+	luaL_setfuncs(L, M, 0);
 	lua_pushvalue(L, -1);
 	lua_setfield(L, -2, "__index");
 	lua_pop(L, 1);
 
 	lua_newtable(L);
-    luaL_register(L, NULL, R);
+	luaL_setfuncs(L, R, 0);
 
 	lua_setfield(L, -2, "crypto");
 }

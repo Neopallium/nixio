@@ -256,7 +256,7 @@ static const luaL_Reg M[] = {
 void nixio_open_tls_socket(lua_State *L) {
 	/* create socket metatable */
 	luaL_newmetatable(L, NIXIO_TLS_SOCK_META);
-	luaL_register(L, NULL, M);
+	luaL_setfuncs(L, M, 0);
 	lua_pushvalue(L, -1);
 	lua_setfield(L, -2, "__index");
 	lua_setfield(L, -2, "meta_tls_socket");

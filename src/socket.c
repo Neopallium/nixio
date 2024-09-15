@@ -165,9 +165,9 @@ static const luaL_Reg M[] = {
 };
 
 void nixio_open_socket(lua_State *L) {
-	luaL_register(L, NULL, R);
+	luaL_setfuncs(L, R, 0);
 
 	lua_pushvalue(L, -2);
-	luaL_register(L, NULL, M);
+	luaL_setfuncs(L, M, 0);
 	lua_pop(L, 1);
 }

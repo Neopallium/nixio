@@ -372,10 +372,10 @@ static const luaL_Reg R[] = {
 };
 
 void nixio_open_file(lua_State *L) {
-	luaL_register(L, NULL, R);
+	luaL_setfuncs(L, R, 0);
 
 	luaL_newmetatable(L, NIXIO_FILE_META);
-	luaL_register(L, NULL, M);
+	luaL_setfuncs(L, M, 0);
 	lua_pushvalue(L, -1);
 	lua_setfield(L, -2, "__index");
 

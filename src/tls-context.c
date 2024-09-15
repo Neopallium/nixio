@@ -236,7 +236,7 @@ void nixio_open_tls_context(lua_State *L) {
     SSL_library_init();
 
     /* register module functions */
-    luaL_register(L, NULL, R);
+    luaL_setfuncs(L, R, 0);
 
 #if defined (WITH_AXTLS)
     lua_pushliteral(L, "axtls");
@@ -251,6 +251,6 @@ void nixio_open_tls_context(lua_State *L) {
 	luaL_newmetatable(L, NIXIO_TLS_CTX_META);
 	lua_pushvalue(L, -1);
 	lua_setfield(L, -2, "__index");
-	luaL_register(L, NULL, CTX_M);
+	luaL_setfuncs(L, CTX_M, 0);
 	lua_setfield(L, -2, "meta_tls_context");
 }

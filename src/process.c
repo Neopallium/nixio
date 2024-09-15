@@ -480,5 +480,5 @@ static const luaL_Reg R[] = {
 };
 
 void nixio_open_process(lua_State *L) {
-	luaL_register(L, NULL, R);
+	luaL_setfuncs(L, R, 0);
 }

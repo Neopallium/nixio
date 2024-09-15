@@ -384,7 +384,7 @@ static const luaL_Reg M[] = {
 
 void nixio_open_sockopt(lua_State *L) {
 	lua_pushvalue(L, -2);
-	luaL_register(L, NULL, M);
+	luaL_setfuncs(L, M, 0);
 	lua_pop(L, 1);
 
 	luaL_getmetatable(L, NIXIO_FILE_META);

@@ -549,7 +549,7 @@ static const luaL_Reg R[] = {
 
 void nixio_open_fs(lua_State *L) {
 	lua_newtable(L);
-	luaL_register(L, NULL, R);
+	luaL_setfuncs(L, R, 0);
 	lua_setfield(L, -2, "fs");
 
 	luaL_newmetatable(L, NIXIO_DIR_META);

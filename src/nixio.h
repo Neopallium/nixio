@@ -13,8 +13,8 @@
 /* some Lua 5.1 compatibility support. */
 #if (LUA_VERSION_NUM == 501)
 #define lua_rawlen(L, idx) lua_objlen(L, idx)
-#endif
-#if LUA_VERSION_NUM > 501
+void luaL_setfuncs (lua_State *L, const luaL_Reg *l, int nup);
+#else
 #define luaL_register(L, name, funcs) luaL_newlib(L, funcs)
 #endif
 

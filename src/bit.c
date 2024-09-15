@@ -140,7 +140,7 @@ static const luaL_Reg R[] = {
 
 void nixio_open_bit(lua_State *L) {
 	lua_newtable(L);
-	luaL_register(L, NULL, R);
+	luaL_setfuncs(L, R, 0);
 	nixio__pushnumber(L, NIXIO_BIT_BMAX);
 	lua_setfield(L, -2, "bits");
 	nixio__pushnumber(L, NIXIO_BIT_NMAX);

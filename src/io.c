@@ -216,6 +216,6 @@ static const luaL_Reg M[] = {
 
 void nixio_open_io(lua_State *L) {
 	lua_pushvalue(L, -2);
-	luaL_register(L, NULL, M);
+	luaL_setfuncs(L, M, 0);
 	lua_pop(L, 1);
 }

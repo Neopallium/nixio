@@ -111,7 +111,7 @@ static const luaL_Reg R[] = {
 };
 
 void nixio_open_syslog(lua_State *L) {
-	luaL_register(L, NULL, R);
+	luaL_setfuncs(L, R, 0);
 }
 
 #else /* __WINNT__ */
