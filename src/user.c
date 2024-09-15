@@ -234,7 +234,7 @@ static int nixio_crypt(lua_State *L) {
 
 
 /* module table */
-static const luaL_reg R[] = {
+static const luaL_Reg R[] = {
 	{"crypt",		nixio_crypt},
 	{"getgr",		nixio_getgr},
 	{"getpw",		nixio_getpw},
@@ -246,7 +246,7 @@ static const luaL_reg R[] = {
 
 #else /* __WINNT__ */
 
-static const luaL_reg R[] = {
+static const luaL_Reg R[] = {
 		{NULL,			NULL}
 };
 

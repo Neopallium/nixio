@@ -44,7 +44,7 @@ int nixio__exec(lua_State *L, int m) {
 
 	if (m == NIXIO_EXECVE) {
 		luaL_checktype(L, 2, LUA_TTABLE);
-		argn = lua_objlen(L, 2) + 1;
+		argn = lua_rawlen(L, 2) + 1;
 	} else {
 		argn = lua_gettop(L);
 	}
@@ -128,7 +128,7 @@ static int nixio_fork(lua_State *L) {
 }
 
 static int nixio_kill(lua_State *L) {
-	return nixio__pstatus(L, !kill(luaL_checkint(L, 1), luaL_checkint(L, 2)));
+	return nixio__pstatus(L, !kill(luaL_checkinteger(L, 1), luaL_checkinteger(L, 2)));
 }
 
 static int nixio_getppid(lua_State *L) {
@@ -155,7 +155,7 @@ static int nixio_setuid(lua_State *L) {
 }
 
 static int nixio_nice(lua_State *L) {
-	int nval = luaL_checkint(L, 1);
+	int nval = luaL_checkinteger(L, 1);
 
 	errno = 0;
 	nval = nice(nval);
@@ -445,7 +445,7 @@ static int nixio_gettime(lua_State *L)
 
 
 /* module table */
-static const luaL_reg R[] = {
+static const luaL_Reg R[] = {
 #ifdef __linux__
 	{"sysinfo",		nixio_sysinfo},
 #endif

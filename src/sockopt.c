@@ -212,7 +212,7 @@ static int nixio__gso_mreq6(lua_State *L, int fd, int level, int opt, int set) {
 		if (inet_pton(AF_INET6, maddr, &val.ipv6mr_multiaddr) < 1) {
 			return nixio__perror_s(L);
 		}
-		val.ipv6mr_interface = luaL_optlong(L, set + 1, 0);
+		val.ipv6mr_interface = luaL_optinteger(L, (set + 1), 0);
 		if (!setsockopt(fd, level, opt, (char *)&val, optlen)) {
 			lua_pushboolean(L, 1);
 			return 1;
@@ -372,7 +372,7 @@ static int nixio_sock_setsockopt(lua_State *L) {
 }
 
 /* module table */
-static const luaL_reg M[] = {
+static const luaL_Reg M[] = {
 	{"setblocking", nixio_sock_setblocking},
 	{"getsockopt",	nixio_sock_getsockopt},
 	{"setsockopt",	nixio_sock_setsockopt},

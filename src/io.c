@@ -75,7 +75,7 @@ static int nixio_sock__sendto(lua_State *L, int to) {
 	const char *data = luaL_checklstring(L, 2, &len);
 
 	if (lua_gettop(L) > argoff) {
-		int offset = luaL_optint(L, argoff + 1, 0);
+		int offset = luaL_optinteger(L, argoff + 1, 0);
 		if (offset) {
 			if (offset < len) {
 				data += offset;
@@ -85,7 +85,7 @@ static int nixio_sock__sendto(lua_State *L, int to) {
 			}
 		}
 
-		unsigned int wlen = luaL_optint(L, argoff + 2, len);
+		unsigned int wlen = luaL_optinteger(L, argoff + 2, len);
 		if (wlen < len) {
 			len = wlen;
 		}
@@ -204,7 +204,7 @@ static int nixio_sock_recvfrom(lua_State *L) {
 
 
 /* module table */
-static const luaL_reg M[] = {
+static const luaL_Reg M[] = {
 	{"send",	nixio_sock_send},
 	{"sendto",	nixio_sock_sendto},
 	{"recv",	nixio_sock_recv},

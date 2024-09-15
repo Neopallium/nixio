@@ -38,8 +38,8 @@ static int nixio_gettimeofday(lua_State *L) {
  */
 static int nixio_nanosleep(lua_State *L) {
 	struct timespec req, rem;
-	req.tv_sec = luaL_optint(L, 1, 0);
-	req.tv_nsec = luaL_optint(L, 2, 0);
+	req.tv_sec = luaL_optinteger(L, 1, 0);
+	req.tv_nsec = luaL_optinteger(L, 2, 0);
 
 	int status = nanosleep(&req, &rem);
 	if (!status) {
@@ -123,9 +123,9 @@ static int nixio_poll_flags(lua_State *L) {
  * poll({{fd = socket, events = FLAGS}, ...}, timeout)
  */
 static int nixio_poll(lua_State *L) {
-	int len = lua_objlen(L, 1);
+	int len = lua_rawlen(L, 1);
 	int i, fd;
-	int timeout = luaL_optint(L, 2, 0);
+	int timeout = luaL_optinteger(L, 2, 0);
 	int status = -1;
 
 	/* we are being abused as sleep() replacement... */
@@ -197,7 +197,7 @@ static int nixio_poll(lua_State *L) {
 }
 
 /* module table */
-static const luaL_reg R[] = {
+static const luaL_Reg R[] = {
 	{"gettimeofday", nixio_gettimeofday},
 	{"nanosleep",	nixio_nanosleep},
 	{"poll",		nixio_poll},

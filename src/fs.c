@@ -31,7 +31,7 @@
 int nixio__check_mode(lua_State *L, int idx, int def) {
 	if (lua_isnoneornil(L, idx) && def > 0) {
 		return def;
-	} else if (lua_isstring(L, idx) && lua_objlen(L, idx) == 9) {
+	} else if (lua_isstring(L, idx) && lua_rawlen(L, idx) == 9) {
 		int mode = 0;
 		const char *modestr = lua_tostring(L, idx);
 		int i;
@@ -519,7 +519,7 @@ static int nixio_statvfs(lua_State *L) {
 
 
 /* module table */
-static const luaL_reg R[] = {
+static const luaL_Reg R[] = {
 #ifndef __WINNT__
 	{"glob",		nixio_glob},
 	{"mkfifo",		nixio_mkfifo},

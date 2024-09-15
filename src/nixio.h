@@ -1,6 +1,23 @@
 #ifndef NIXIO_H_
 #define NIXIO_H_
 
+#include <lua.h>
+#include <lualib.h>
+#include <lauxlib.h>
+#include <luaconf.h>
+
+#if !defined(LUA_VERSION_NUM)
+#define lua_pushinteger(L, n) lua_pushnumber(L, (lua_Number)n)
+#endif
+
+/* some Lua 5.1 compatibility support. */
+#if (LUA_VERSION_NUM == 501)
+#define lua_rawlen(L, idx) lua_objlen(L, idx)
+#endif
+#if LUA_VERSION_NUM > 501
+#define luaL_register(L, name, funcs) luaL_newlib(L, funcs)
+#endif
+
 #define NIXIO_OOM "out of memory"
 
 #define NIXIO_META "nixio.socket"
@@ -12,14 +29,6 @@
 #define NIXIO_PUSH_CONSTANT(x) \
 	lua_pushinteger(L, x); \
 	lua_setfield(L, -2, #x);
-
-/* uClibc: broken as always */
-#define _LARGEFILE_SOURCE
-
-#include <lua.h>
-#include <lualib.h>
-#include <lauxlib.h>
-#include <luaconf.h>
 
 #define NIXIO_BUFFERSIZE 8192
 

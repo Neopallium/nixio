@@ -174,7 +174,7 @@ static int nixio_tls_sock_send(lua_State *L) {
 	const char *data = luaL_checklstring(L, 2, &len);
 
 	if (lua_gettop(L) > 2) {
-		int offset = luaL_optint(L, 3, 0);
+		int offset = luaL_optinteger(L, 3, 0);
 		if (offset) {
 			if (offset < len) {
 				data += offset;
@@ -184,7 +184,7 @@ static int nixio_tls_sock_send(lua_State *L) {
 			}
 		}
 
-		unsigned int wlen = luaL_optint(L, 4, len);
+		unsigned int wlen = luaL_optinteger(L, 4, len);
 		if (wlen < len) {
 			len = wlen;
 		}
@@ -239,7 +239,7 @@ static int nixio_tls_sock__tostring(lua_State *L) {
 
 
 /* ctx function table */
-static const luaL_reg M[] = {
+static const luaL_Reg M[] = {
 	{"recv", 		nixio_tls_sock_recv},
 	{"send", 		nixio_tls_sock_send},
 	{"read", 		nixio_tls_sock_recv},
