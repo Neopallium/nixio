@@ -102,7 +102,13 @@ static int nixio_bit_div(lua_State *L) {
 
 static int nixio_bit_check(lua_State *L) {
 	uint64_t oper  = nixio__checknumber(L, 1);
-	uint64_t oper2 = nixio__checknumber(L, 2);
+	uint64_t oper2 = 0;
+	const int args = lua_gettop(L);
+
+	for (int i = 2; i <= args; i++) {
+		oper2 |= (uint64_t)nixio__checknumber(L, i);
+	}
+
 	lua_pushboolean(L, (oper & oper2) == oper2);
 	return 1;
 }
