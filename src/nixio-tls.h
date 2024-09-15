@@ -6,8 +6,6 @@
 
 #ifndef WITHOUT_OPENSSL
 #include <openssl/ssl.h>
-#include <openssl/md5.h>
-#include <openssl/sha.h>
 #endif
 
 #define NIXIO_TLS_CTX_META "nixio.tls.ctx"
@@ -30,12 +28,10 @@ typedef struct nixio_tls_socket {
 #define NIXIO_HASH_NONE	0
 #define NIXIO_HASH_MD5	0x01
 #define NIXIO_HASH_SHA1	0x02
+#define NIXIO_HASH_EVP	0x04
 
 #define NIXIO_HMAC_BIT	0x40
-
-typedef int(*nixio_hash_initcb)(void *);
-typedef int(*nixio_hash_updatecb)(void *, const void *, unsigned long);
-typedef int(*nixio_hash_finalcb)(unsigned char *, void *);
+#define NIXIO_FINAL_BIT	0x80
 
 typedef struct nixio_hash_obj {
 	uint				type;
@@ -45,9 +41,6 @@ typedef struct nixio_hash_obj {
 	size_t				key_size;
 	size_t				block_size;
 	void				*ctx;
-	nixio_hash_initcb	init;
-	nixio_hash_updatecb	update;
-	nixio_hash_finalcb	final;
 } nixio_hash;
 
 #endif /* NIXIO_TLS_H_ */
