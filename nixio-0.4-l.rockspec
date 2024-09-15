@@ -1,7 +1,8 @@
 package = "nixio"
-version = "0.3-1"
+version = "0.4-1"
 source = {
-   url = "http://dev.luci.freifunk-halle.net/nixio/nixio-0.3.tar.bz2"
+	url = "git://github.com/Neopallium/nixio.git",
+  branch = "v0.4"
 }
 description = {
    summary = "System, Networking and I/O library for Lua",
@@ -12,7 +13,7 @@ description = {
       basic cryptographical hashing, hmac and TLS support, bit operations and
       binary conversion.
    ]],
-   homepage = "http://luci.subsignal.org",
+   homepage = "http://github.com/Neopallium/nixio",
    license = "Apache 2.0",
    maintainer = "Steven Barth",
 }

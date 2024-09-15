@@ -22,7 +22,7 @@
 #include <errno.h>
 #include <signal.h>
 
-#define VERSION 0.3
+#define VERSION 0.4
 
 
 /* pushes nil, error number and errstring on the stack */

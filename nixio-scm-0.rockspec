@@ -14,7 +14,7 @@ description = {
 		basic cryptographical hashing, hmac and TLS support, bit operations and
 		binary conversion.
 	]],
-	homepage = "http://luci.subsignal.org",
+  homepage = "http://github.com/Neopallium/nixio",
 	license = "Apache 2.0",
 	maintainer = "Robert G. Jakabosky <bobby@sharedrealm.com>",
 }
