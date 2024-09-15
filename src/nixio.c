@@ -22,7 +22,7 @@
 #include <errno.h>
 #include <signal.h>
 
-#define VERSION 0.4
+#define VERSION "0.4"
 
 
 /* pushes nil, error number and errstring on the stack */
@@ -150,7 +150,7 @@ NIXIO_API int luaopen_nixio(lua_State *L) {
 #endif
 
 	/* module version */
-	lua_pushnumber(L, VERSION);
+	lua_pushliteral(L, VERSION);
 	lua_setfield(L, -2, "version");
 
 	/* some constants */
